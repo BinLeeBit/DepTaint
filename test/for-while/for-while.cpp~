@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main(){
+
+	int b=1,c=1,d=1,e=1,i;
+        int __attribute__((annotate("sensitive"))) a;
+	scanf("%d",&a);
+	for (i=1;i<=a;i++)    
+	{
+	    b=2;
+            c=2
+	    while (b<=5) 
+	    {
+		d += b;
+	    }
+	    while (c<=a) 
+	    {
+		e += b;
+	    }
+	}
+}
+

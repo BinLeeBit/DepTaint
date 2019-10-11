@@ -1,0 +1,9 @@
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+    char __attribute__((annotate("sensitive"))) * str="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    char dst[10];
+    strcpy(dst, str);
+    return 0;
+}

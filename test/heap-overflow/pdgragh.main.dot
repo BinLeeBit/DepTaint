@@ -1,0 +1,40 @@
+digraph "Program Dependency Graph for 'main' function" {
+	label="Program Dependency Graph for 'main' function";
+
+	Node0x270db50 [shape=record,label="{  %1 = alloca i32, align 4}"];
+	Node0x270db50 -> Node0x270dbc0[style=dotted,label = "{DEF_USE}" ];
+	Node0x270dbc0 [shape=record,label="{  store i32 0, i32* %1}"];
+	Node0x270dc30 [shape=record,label="{  %str = alloca i8*, align 8}"];
+	Node0x270dc30 -> Node0x270dcd0[style=dotted,label = "{DEF_USE}" ];
+	Node0x270dc30 -> Node0x270dd40[style=dotted,label = "{DEF_USE}" ];
+	Node0x270dc30 -> Node0x270ddb0[style=dotted,label = "{DEF_USE}" ];
+	Node0x270dcd0 [shape=record,label="{  %2 = bitcast i8** %str to i8*, !dbg !16}"];
+	Node0x270dcd0 -> Node0x270ded0[style=dotted,label = "{DEF_USE}" ];
+	Node0x270dd40 [shape=record,label="{  store i8* getelementptr inbounds ([33 x i8]* @.str2, i32 0, i32 0), i8** %str, align 8, !dbg !16}"];
+	Node0x270dd40 -> Node0x270ddb0[style=dotted,label = "{RAW} str"];
+	Node0x270ddb0 [shape=record,label="{  %4 = load i8** %str, align 8, !dbg !22}"];
+	Node0x270ddb0 -> Node0x270d5a0[style=dotted,label = "{DEF_USE}" ];
+	Node0x270dca0 [shape=record,label="{  %dst = alloca [10 x i8], align 1}"];
+	Node0x270dca0 -> Node0x270de60[style=dotted,label = "{DEF_USE}" ];
+	Node0x270de60 [shape=record,label="{  %3 = getelementptr inbounds [10 x i8]* %dst, i32 0, i32 0, !dbg !22}"];
+	Node0x270de60 -> Node0x270d5a0[style=dotted,label = "{DEF_USE}" ];
+	Node0x270ded0 [shape=record,label="{  call void @llvm.var.annotation(i8* %2, i8* getelementptr inbounds ([10 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([7 x i8]* @.str1, i32 0, i32 0), i32 5), !dbg !16}"];
+	Node0x270d5a0 [shape=record,label="{  %5 = call i8* @strcpy(i8* %3, i8* %4) #2, !dbg !22}"];
+	Node0x270e050 [shape=record,label="{\<\<ENTRY\>\> main}"];
+	Node0x270e050 -> Node0x270db50;
+	Node0x270e050 -> Node0x270dc30;
+	Node0x270e050 -> Node0x270dca0;
+	Node0x270e050 -> Node0x270dbc0;
+	Node0x270e050 -> Node0x270e0e0;
+	Node0x270e050 -> Node0x270dcd0;
+	Node0x270e050 -> Node0x270ded0;
+	Node0x270e050 -> Node0x270dd40;
+	Node0x270e050 -> Node0x270e230;
+	Node0x270e050 -> Node0x270de60;
+	Node0x270e050 -> Node0x270ddb0;
+	Node0x270e050 -> Node0x270d5a0;
+	Node0x270e050 -> Node0x270e1a0;
+	Node0x270e0e0 [shape=record,label="{  call void @llvm.dbg.declare(metadata !\{i8** %str\}, metadata !12), !dbg !15}"];
+	Node0x270e230 [shape=record,label="{  call void @llvm.dbg.declare(metadata !\{[10 x i8]* %dst\}, metadata !17), !dbg !21}"];
+	Node0x270e1a0 [shape=record,label="{  ret i32 0, !dbg !23}"];
+}

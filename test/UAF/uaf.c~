@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 32
+int main(int argc,char** argv){
+    char * __attribute__((annotate("sensitive"))) buf1;
+    char *buf2;
+    buf1=(char*) malloc(SIZE);
+    printf("buf1:0x%p\n",buf1);
+    free(buf1);
+    //buf1=null;
+
+    buf2 = (char*)malloc(SIZE);
+    printf("buf2:0x%p\n",buf2);
+
+    memset(buf2,0,SIZE);
+    printf("buf2:%d\n",*buf2);
+
+    printf("After free\n");
+    strncpy(buf1,"hack",5);
+
+    printf("buf2:%s\n\n",buf2);
+    free(buf2);
+    return 0;
+}

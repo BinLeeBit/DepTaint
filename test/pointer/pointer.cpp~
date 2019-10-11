@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main(){
+    int    a = 10;   
+    int __attribute__((annotate("tainted"))) *pa;
+    int __attribute__((annotate("tainted"))) b;
+    int *pb;
+    int *pc;
+    int *pd;
+
+    pa = &a;
+    pb = &b;
+    pc = pa;
+    pd = pb;
+    return 0;
+}

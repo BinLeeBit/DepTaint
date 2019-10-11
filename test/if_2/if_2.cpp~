@@ -1,0 +1,17 @@
+int main(){
+
+  int a,b,c,d;
+  int __attribute__((annotate("tainted"))) flag;
+  a = flag + 2;
+  d = 0;
+  if (flag > 3){
+    b = flag + 10;  
+    c = b - flag;       
+  }
+  else {
+    c = 10;	
+    __attribute__((annotate("tainted"))) d;	
+  }                           
+
+  return 0;
+}

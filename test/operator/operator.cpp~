@@ -1,0 +1,21 @@
+#include <stdio.h>
+ 
+main()
+{
+ 
+ unsigned int __attribute__((annotate("sensitive"))) a = 60;   
+ unsigned int b = 13;   
+ int c = 0, d = 0, e = 0, f = 0, g = 0;   
+ 
+ c = a & b;  
+ 
+ d = a | b;  
+ 
+ e = a ^ b;  
+ 
+ f = ~a;  
+ 
+ g = a << 2;  
+ 
+
+}

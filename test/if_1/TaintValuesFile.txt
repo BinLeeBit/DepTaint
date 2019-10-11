@@ -1,0 +1,11 @@
+---------------------------------------------
+function:main
+---------------------------------------------
+3:flag,
+5:flag,ch1,
+6:flag,ch1,
+7:flag,ch1,ch2,
+8:flag,ch1,ch2,ch3,
+9:flag,ch1,ch2,ch3,
+11:flag,ch1,ch2,ch3,
+14:flag,ch1,ch2,ch3,

@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main(){
+    int __attribute__((annotate("sensitive"))) index;
+    int array[3]={111,222,333};
+    printf("please input index:\n");
+    scanf("%d",&index);
+    printf("array[%d]=%d\n",index,array[index]);
+    //写越界，造成溢出；
+    a[index]=233;
+    return 0;
+}
